@@ -23,6 +23,7 @@
     - Non-blocking Worker에서 처리한 결과 Event를 다시 Event Queue에 다시 넘겨주고 <br> 
       Event Loop는 Queue에 있는 Event를 실행을 한다. 실행이 완료되면 다시 클라리언트에게 응답
 
+<br>
 
 # Contents of Node.js
 1. 모듈 시스템
@@ -42,7 +43,7 @@
     - 파일을 다 읽었다라고 Event가 발생하면 그제서야 콜백함수가 실행됨
     - Node에서는 비동기 방식을 주로 많이 씀
 
-
+<br>
 
 # Express.js는 왜 필요할까? 
 
@@ -103,7 +104,7 @@
       - http 모듈의 response 객체를 래핑한 것이다. 
       - res.send(), res.status(), res.json() 메소드를 주로 사용힌디.
 
-
+<br>
 
 # NPM이란?
   - Node Packaged Manager의 약자로 Node.js로 만들어진 pakage(module)을 관리해주는 툴이다.
@@ -124,7 +125,7 @@
 * npm run build
   - webpack을 통해서 bundling을 하기 위한 webpack.config.js를 실행시키기 
 
-
+<br>
 
 # REST API란?
   
@@ -154,6 +155,9 @@
 
     3. 5XX (서버, 나의 문제)
       - 500: 서버 에러(Interel server error)
+
+
+<br>
 
 
 # 테스트 주도 개발(TDD)이란?
@@ -188,3 +192,30 @@
       })
 
     - assert 메서드는 유닛 테스트를 위해서 Node.js에서 사용할 수 있는 테스트 모듈이다. 
+
+<br>
+
+    2. should
+      - https://shouldjs.github.io
+      - https://github.com/tj/should.js
+
+      - "노드 assert 말고 서드파티 라이브러리를 사용하라"
+      - 슈드(should)는 검증 라이브러리이다.
+      - 가독성 높은 테스트 코드를 만들 수 있다. 
+
+<br>
+
+    3. superTest
+      - 단위 테스트: 함수의 기능 테스트 ==> mocha와 should
+      - 통합 테스트: API의 기능 테스트
+      - 슈퍼 테스트는 Express용 통합 테스트 라이브러리이다. 
+
+      - 설치: npm install superset
+      - 확인: node_modules/.bin/mocha [파일명]
+        (express 앱 자체를 export ==> module.exports = app;)
+
+
+<br>
+
+# API 테스트 코드 만들기 
+  - 

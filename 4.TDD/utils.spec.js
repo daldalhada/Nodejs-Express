@@ -4,12 +4,15 @@
 
 const utils = require('./utils');
 const assert = require('assert');
+const should = require('should');
+
 
 
 // 테스트 환경
 describe('utils.js모듈의 capitaliza() 함수는', () => {
     it('문자열의 첫번째 문자를 대문자로 변환한다', () => {
         const result = utils.cap('hello');
-        assert.equal(result, 'Hello');
+        // assert.equal(result, 'Hello');
+        result.should.be.equal('Hello');
     })
 })
