@@ -181,20 +181,22 @@
     - 확인: node_modules/.bin/mocha [파일명]
       예) node_modules/.bin/mocha utils.spec.js
 
+      ```
       describe('utils.js모듈의 capitaliza() 함수는', () => {
         it('문자열의 첫번째 문자를 대문자로 변환한다', () => {
           const result = utils.cap('hello');
           assert.equal(result, 'Hello');
         })
       })
+      ```
 
     - assert 메서드는 유닛 테스트를 위해서 Node.js에서 사용할 수 있는 테스트 모듈이다. 
 
 <br>
 
   2. should
-    - https://shouldjs.github.io
-    - https://github.com/tj/should.js
+    + https://shouldjs.github.io
+    + https://github.com/tj/should.js
 
     - "노드 assert 말고 서드파티 라이브러리를 사용하라"
     - 슈드(should)는 검증 라이브러리이다.
@@ -203,9 +205,9 @@
 <br>
 
   3. superTest
-    - 단위 테스트: 함수의 기능 테스트 ==> mocha와 should
-    - 통합 테스트: API의 기능 테스트
-    - 슈퍼 테스트는 Express용 통합 테스트 라이브러리이다. 
+    + 단위 테스트: 함수의 기능 테스트 ==> mocha와 should
+    + 통합 테스트: API의 기능 테스트
+    + 슈퍼 테스트는 Express용 통합 테스트 라이브러리이다. 
 
     - 설치: npm install superset
     - 확인: node_modules/.bin/mocha [파일명]
