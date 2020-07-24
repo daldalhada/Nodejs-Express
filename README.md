@@ -219,7 +219,7 @@
 <br>
 
 # API 테스트 코드 만들기 
-  - 
+  - code 확인 
 
 <br>
 
@@ -253,18 +253,20 @@
 
   - SQL vs Sequeliza 예) 
 
+  <br>
+
   1. 
-  SQL문: insert users ('name') values ('alice'); <br>
-  시퀄라이저: USer.create({name: 'alice'})
+  &nbsp;&nbsp;&nbsp;&nbsp; SQL문: insert users ('name') values ('alice'); <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 시퀄라이저: USer.create({name: 'alice'})
 
   2. 
-  SQL문: select * from users; <br>
-  시퀄라이저: User.findAll();
+  &nbsp;&nbsp;&nbsp;&nbsp; SQL문: select * from users; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 시퀄라이저: User.findAll();
 
   3. 
-  SQL문: update users set name = 'bek' where id=1; <br>
-  시퀄라이저: User.update({name: 'bek'}, {where: {id:1}});
+  &nbsp;&nbsp;&nbsp;&nbsp; SQL문: update users set name = 'bek' where id=1; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 시퀄라이저: User.update({name: 'bek'}, {where: {id:1}});
 
   4. 
-  SQL문: delete from users where id = 1;  <br>
-  시퀄라이저: User.destroy({where: {id:1}});
+  &nbsp;&nbsp;&nbsp;&nbsp; SQL문: delete from users where id = 1;  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 시퀄라이저: User.destroy({where: {id:1}});
