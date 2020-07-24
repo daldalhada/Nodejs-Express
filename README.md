@@ -34,7 +34,6 @@
         * 기본 모듈
         * 써드 파티 모듈(프로그래밍을 도와주는 Plug_in이나 library 등을 만드는 제 3자 회사)
         * 사용자 정의 모듈 
-
 2. 비동기 
     - Node는 기본적으로 비동기로 동작함
     - readFile() vs readFileSync()
