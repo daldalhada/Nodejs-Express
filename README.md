@@ -97,15 +97,15 @@
 # NPM이란?
   - Node Packaged Manager의 약자로 Node.js로 만들어진 pakage(module)을 관리해주는 툴이다.
   - 쉽게 말해, Node.js로 만들어진 모듈을 웹에서 받아 설치하고 관리해주는 프로그램이다. 
-  - 게다가, 이 모듈들을 활용했다면 이후에 그 모듈을 만든 개발자가 업데이트를 할 경우 체크를 해서 
-    알려준다.(즉, 버전관리가 쉬워진다.)
+  - 게다가, 이 모듈들을 활용했다면 이후에 그 모듈을 만든 개발자가 업데이트를 할 경우 체크를 해서 알려준다. <br> 
+    (즉, 버전관리가 쉬워진다.)
 
   
 * npm init
   - 모듈의 의존성을 한꺼번에 관리하는 방법 ==> json 파일을 만들어 그 안에 기록을 통해 관리 <br>
     (package.json 생성)
-  - "script" : run 명령어를 통해서 실행할 것들을 적어두는 것
-  - "dependencies" : 설치할 모듈을 의미
+    - "script" : run 명령어를 통해서 실행할 것들을 적어두는 것
+    - "dependencies" : 설치할 모듈을 의미
 
 * npm install
   - package.json 파일이 정리되면 배포를 해야 할 때 node_modules 폴더에 담긴 파일들은 같이 배포되지 않는다. 이 때, 배포할 때 해당 프로그램 개발에 사용되었던 모듈을 그래도 install 할 수 있다. 
@@ -117,32 +117,31 @@
 
 # REST API란?
   
-  * 요청 형식
+  * **요청 형식**
     - HTTP 메서드 : 서버 자원에 대한 행동을 나타낸다. (동사로 표현)
-
-    1. GET: 자원을 조회
-    2. POST: 자원을 생성
-    3. PUT: 자원을 갱신
-    4. DELETE: 자원을 삭제
+      1. GET: 자원을 조회
+      2. POST: 자원을 생성
+      3. PUT: 자원을 갱신
+      4. DELETE: 자원을 삭제
 
     - 이는 Express 어플리케이션의 메소드로 구현되어 있다. 
 
-  * 응답 형식
+  * **응답 형식**
     - HTTP 상태코드
 
-    1. 2XX
-      - 200: 성공(success), GET, PUT
-      - 201: 작성됨(created), POST
-      - 204: 내용 없음(No Content), DELETE
+      1. 2XX
+        - 200: 성공(success), GET, PUT
+        - 201: 작성됨(created), POST
+        - 204: 내용 없음(No Content), DELETE
 
-    2. 4XX (클라이언트, 상대방의 문제)
-      - 400: 잘못된 요청(Bad Request)
-      - 401: 권한 없음(Unauthorized)
-      - 404: 잘못된 요청(Not found)
-      - 409: 잘못된 요청(Conflict)
+      2. 4XX (클라이언트, 상대방의 문제)
+        - 400: 잘못된 요청(Bad Request)
+        - 401: 권한 없음(Unauthorized)
+        - 404: 잘못된 요청(Not found)
+        - 409: 잘못된 요청(Conflict)
 
-    3. 5XX (서버, 나의 문제)
-      - 500: 서버 에러(Interel server error)
+      3. 5XX (서버, 나의 문제)
+        - 500: 서버 에러(Interel server error)
 
 
 <br>
