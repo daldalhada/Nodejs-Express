@@ -134,14 +134,14 @@
       1. 2XX
         + 200: 성공(success), GET, PUT
         + 201: 작성됨(created), POST
-        + 204: 내용 없음(No Content), DELETE <br>
-
+        + 204: 내용 없음(No Content), DELETE 
+      <br><br>
       2. 4XX (클라이언트, 상대방의 문제)
         + 400: 잘못된 요청(Bad Request)
         + 401: 권한 없음(Unauthorized)
         + 404: 잘못된 요청(Not found)
         + 409: 잘못된 요청(Conflict) <br>
-
+      <br><br>
       3. 5XX (서버, 나의 문제)
         + 500: 서버 에러(Interel server error)
 
