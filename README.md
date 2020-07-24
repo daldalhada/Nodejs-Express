@@ -217,6 +217,7 @@
 # API 테스트 코드 만들기 
   - 
 
+<br>
 
 # 데이터베이스
 
@@ -229,11 +230,15 @@
 3. In Memory DB
   - Redis, Memcashed
 
+<br>
+
 # ORM
   - Object Relational Mapping
   - 데이터베이스를 객체로 추상화해 놓은 것
   - 쿼리를 직접 작성하는 대신 ORM 메소드로 데이터를 관리할 수 있는 것이 장점
   - 노드에서 SQL ORM은 시퀄라이저(Sequelize)가 있다. 
+
+<br>
 
 # 시퀄라이저
   - https://sequelize.org/master/
@@ -242,12 +247,7 @@
   - sequelize.define(): 모델 정의
   - sequelize.sync(): 데이터베이스 연동 
 
-  - 
-
-
-
-  - 비교 
-   예) 
+  - SQL vs Sequeliza 예) 
 
   1. 
   SQL문: insert users ('name') values ('alice'); <br>
