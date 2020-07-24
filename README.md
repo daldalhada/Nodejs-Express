@@ -62,21 +62,19 @@
   2. 미들웨어(Express.js에 기능을 추가하고 싶을 때마다 기능을 추가)
       - 미들웨어는 함수들의 연속이다. 
       - 로깅 미들웨어, 써드파티 미들웨어, 일반 미들웨어, 에러(404, 500 등) 미들웨어
-
       - 미들웨어는 파라미터로 req, res, next를 가져야 한다.
-      - next()는 다음 로직을 수행할 수 있도록 해주는 것이다. <br>
+      - next()는 다음 로직을 수행할 수 있도록 해주는 것이다.
         (선언하지 않으면 다음 미들웨어를 실행하지 않음)
       - 사용법: app.use(함수명)을 선언한다. 
-
-      <br>
-
-      function logger(req, res, next) {
+      - 예) 
+      ```
+        function logger(req, res, next) {
         console.log('logger');
         next();
       }
 
       app.use(logger)
-
+      ```
 
       2.1 써드 파티 미들웨어(다른 사람이 구현해 놓은 미들웨어)
         - morgan: 서버 쪽에 로그를 남겨주는 미들웨어(npm install morgan)
