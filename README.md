@@ -253,17 +253,17 @@
    예) 
 
   1. 
-  SQL문: insert users ('name') values ('alice');
+  SQL문: insert users ('name') values ('alice'); <br>
   시퀄라이저: USer.create({name: 'alice'})
 
   2. 
-  SQL문: select * from users;
+  SQL문: select * from users; <br>
   시퀄라이저: User.findAll();
 
   3. 
-  SQL문: update users set name = 'bek' where id=1;
+  SQL문: update users set name = 'bek' where id=1; <br>
   시퀄라이저: User.update({name: 'bek'}, {where: {id:1}});
 
   4. 
-  SQL문: delete from users where id = 1;
+  SQL문: delete from users where id = 1;  <br>
   시퀄라이저: User.destroy({where: {id:1}});
