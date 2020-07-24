@@ -128,20 +128,19 @@
 
   * **응답 형식**
     - HTTP 상태코드
-
       1. 2XX
-        - 200: 성공(success), GET, PUT
-        - 201: 작성됨(created), POST
-        - 204: 내용 없음(No Content), DELETE
+        1. 200: 성공(success), GET, PUT
+        2. 201: 작성됨(created), POST
+        3. 204: 내용 없음(No Content), DELETE
 
       2. 4XX (클라이언트, 상대방의 문제)
-        - 400: 잘못된 요청(Bad Request)
-        - 401: 권한 없음(Unauthorized)
-        - 404: 잘못된 요청(Not found)
-        - 409: 잘못된 요청(Conflict)
+        1. 400: 잘못된 요청(Bad Request)
+        2. 401: 권한 없음(Unauthorized)
+        3. 404: 잘못된 요청(Not found)
+        4. 409: 잘못된 요청(Conflict)
 
       3. 5XX (서버, 나의 문제)
-        - 500: 서버 에러(Interel server error)
+        1. 500: 서버 에러(Interel server error)
 
 
 <br>
