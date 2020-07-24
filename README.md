@@ -116,6 +116,9 @@
 <br>
 
 # REST API란?
+  REST란 "Representational State Transfer"라는 용어의 약자로  웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까워하며 HTTP기반으로 필요한 자원에 접근하는 방식을 정해놓아 웹의 장점을 최대한 활용할 수 있는 아키텍처이다. 
+
+  여기서의 자원은 저장된 데이터(DBMS)는 물론, 이미지/동영상/문서와 같은 파일, 서비스(이메일 전송, 푸쉬 메시지 등)를 모두 포함한다.
   
   * **요청 형식**
     - HTTP 메서드 : 서버 자원에 대한 행동을 나타낸다. (동사로 표현)
@@ -134,13 +137,13 @@
         + 204: 내용 없음(No Content), DELETE
 
       2. 4XX (클라이언트, 상대방의 문제)
-        1. 400: 잘못된 요청(Bad Request)
-        2. 401: 권한 없음(Unauthorized)
-        3. 404: 잘못된 요청(Not found)
-        4. 409: 잘못된 요청(Conflict)
+        + 400: 잘못된 요청(Bad Request)
+        + 401: 권한 없음(Unauthorized)
+        + 404: 잘못된 요청(Not found)
+        + 409: 잘못된 요청(Conflict)
 
       3. 5XX (서버, 나의 문제)
-        1. 500: 서버 에러(Interel server error)
+        + 500: 서버 에러(Interel server error)
 
 
 <br>
