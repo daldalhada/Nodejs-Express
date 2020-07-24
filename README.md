@@ -7,7 +7,7 @@
     - 이벤트 기반의 비동기 I/O 프레임워크이다. 
     - CommonJS를 구현한 모듈 시스템이 있다. 
         
-* 이벤트 기반의 비동기 I/O 프레임워크(Node.JS Processing Model) <br>
+* 이벤트 기반의 비동기 I/O 프레임워크(Node.JS Processing Model) <br><br>
     **이벤트 기반**
     - 클라이언트쪽에서 서버쪽으로 요청을 보내면 Event 객체로 만들어서 Event Queue에다가 차곡차곡 쌓는다. 
     - Event Loop는 Event Queue에 있는 Event 객체 하나를 가져와 작업을 한다. <br>
@@ -17,7 +17,7 @@
     **비동기 I/O**
     - Event Loop가 클라이언트 쪽에 바로 응답을 해줄 수 있는 Event의 경우에는 문제가 없다.
     - 하지만, 바로 응답할 수 없고 많은 시간이 걸리는 Event의 경우에는 문제가 발생한다. <br>
-      (예를 들어, 디스크에 있는 파일을 읽는 다던지, 외부 네트워크 통신을 해야 한다던지)
+      (예를 들어, 디스크에 있는 파일을 읽는 Event, 외부 네트워크 통신을 해야하는 Event)
     - 따라서, 이런 것들은 Event Loop에서 처리하지 않고 Non-blocking Worker에서 처리한다. <br>
       (다른 쓰레드에게 Event를 위임한다.)
     - Non-blocking Worker에서 처리한 결과 Event를 다시 Event Queue에 다시 넘겨주고 <br> 
