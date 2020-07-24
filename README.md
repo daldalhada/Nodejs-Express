@@ -129,9 +129,9 @@
   * **응답 형식**
     - HTTP 상태코드
       1. 2XX
-        1. 200: 성공(success), GET, PUT
-        2. 201: 작성됨(created), POST
-        3. 204: 내용 없음(No Content), DELETE
+        + 200: 성공(success), GET, PUT
+        + 201: 작성됨(created), POST
+        + 204: 내용 없음(No Content), DELETE
 
       2. 4XX (클라이언트, 상대방의 문제)
         1. 400: 잘못된 요청(Bad Request)
