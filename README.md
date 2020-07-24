@@ -160,37 +160,38 @@
 
 
 # 테스트 주도 개발(TDD)이란?
-  - Test Driven Development : 테스트가 개발을 이끌어 나간다. 
-  - 개발을 할 때 바로 소스코드를 작성하지 않고 테스트 코드를 먼저 작성하는 것
-  - 테스트 코드를 먼저 만든 다음에 테스트를 하나하나 통과해 나가면서 코드를 만드는 개발 방법
-  - TDD를 사용하면 개발 기간이 오래걸리긴 함, 하지만 유지보수 기간이 줄어드는 효과를 가짐 
-  - mocha, should, superTest
 
-  1. mocha
-    - https://mochajs.org
+- Test Driven Development : 테스트가 개발을 이끌어 나간다. 
+- 개발을 할 때 바로 소스코드를 작성하지 않고 테스트 코드를 먼저 작성하는 것
+- 테스트 코드를 먼저 만든 다음에 테스트를 하나하나 통과해 나가면서 코드를 만드는 개발 방법
+- TDD를 사용하면 개발 기간이 오래걸리긴 함, 하지만 유지보수 기간이 줄어드는 효과를 가짐 
+- mocha, should, superTest
 
-    - 모카는 테스트 코드를 돌려주는 테스트 러너
-    - 테스트 수트: 테스트 환경으로 모카에서는 describe()으로 구현한다.
-    - 테스트 케이스: 실제 테스트를 말하며 모카에서는 it()으로 구현한다. 
+1. mocha
+  - https://mochajs.org
 
-    - 보통 파일 이름에 spec.js가 있으면 테스트 코드라고 보면 됨
+  - 모카는 테스트 코드를 돌려주는 테스트 러너
+  - 테스트 수트: 테스트 환경으로 모카에서는 describe()으로 구현한다.
+  - 테스트 케이스: 실제 테스트를 말하며 모카에서는 it()으로 구현한다. 
 
-    - 설치: npm install mocha --save-dev
-      (개발환경으로 설치, package.json의 devDependencies에 생김)
+  - 보통 파일 이름에 spec.js가 있으면 테스트 코드라고 보면 됨
 
-    - 확인: node_modules/.bin/mocha [파일명]
-      예) node_modules/.bin/mocha utils.spec.js
+  - 설치: npm install mocha --save-dev
+    (개발환경으로 설치, package.json의 devDependencies에 생김)
 
-      ```
-      describe('utils.js모듈의 capitaliza() 함수는', () => {
-        it('문자열의 첫번째 문자를 대문자로 변환한다', () => {
-          const result = utils.cap('hello');
-          assert.equal(result, 'Hello');
-        })
-      })
-      ```
+  - 확인: node_modules/.bin/mocha [파일명]
+    예) node_modules/.bin/mocha utils.spec.js
 
-    - assert 메서드는 유닛 테스트를 위해서 Node.js에서 사용할 수 있는 테스트 모듈이다. 
+    ```
+    describe('utils.js모듈의 capitaliza() 함수는', () => {
+      it('문자열의 첫번째 문자를 대문자로 변환한다', () => {
+         const result = utils.cap('hello');
+        assert.equal(result, 'Hello');
+      })      
+    })
+    ```
+
+  - assert 메서드는 유닛 테스트를 위해서 Node.js에서 사용할 수 있는 테스트 모듈이다. 
 
 <br>
 
