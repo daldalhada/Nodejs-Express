@@ -1,10 +1,20 @@
+// 테스트 코드
+
 const request = require('supertest');
 const should = require('should');
-const app = require('../../');
+const app = require('../../index');
 const { doesNotThrow } = require('should');
+const models = require('../../models');
 
+//descript이나 it 뒤에 .only를 붙이면 얘만 실행
 describe('GET /users는 ', () => {
-    describe('성공시', () => {
+    describe.only('성공시', () => {
+        before(done => {
+            models.sequelize.sync({force: true}).then(_=> done())
+        })
+        before(()=> {
+            return models.User.bulkCreate(users);
+        })
         it('유저 객체를 담은 배열로 응답한다. ', (done) => {   // 우리가 만든 서버는 다 비동기로 동작하기 때문에 비동기에 대한 처리로 done이라는 콜백함수를 넣음
             request(app)
                 .get('/users')

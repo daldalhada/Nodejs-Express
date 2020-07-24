@@ -219,3 +219,51 @@
 
 # API 테스트 코드 만들기 
   - 
+
+
+# 데이터베이스
+
+1. SQL
+  - 테이블 형식의 데이터베이스
+  - MySQL, PostgreSQL, Aurora, Sqlite(파일 형태)
+2. NoSQL
+  - Document 형식의 데이터베이스(JSON)
+  - MongoDB, DynamoDB
+3. In Memory DB
+  - Redis, Memcashed
+
+# ORM
+  - Object Relational Mapping
+  - 데이터베이스를 객체로 추상화해 놓은 것
+  - 쿼리를 직접 작성하는 대신 ORM 메소드로 데이터를 관리할 수 있는 것이 장점
+  - 노드에서 SQL ORM은 시퀄라이저(Sequelize)가 있다. 
+
+# 시퀄라이저
+  - https://sequelize.org/master/
+
+  - 모델: 데이터베이스 테이블을 ORM으로 추상화한 것을 모델이라고 한다.
+  - sequelize.define(): 모델 정의
+  - sequelize.sync(): 데이터베이스 연동 
+
+  - 
+
+
+
+  - 비교 
+   예) 
+
+  1. 
+  SQL문: insert users ('name') values ('alice');
+  시퀄라이저: USer.create({name: 'alice'})
+
+  2. 
+  SQL문: select * from users;
+  시퀄라이저: User.findAll();
+
+  3. 
+  SQL문: update users set name = 'bek' where id=1;
+  시퀄라이저: User.update({name: 'bek'}, {where: {id:1}});
+
+  4. 
+  SQL문: delete from users where id = 1;
+  시퀄라이저: User.destroy({where: {id:1}});
