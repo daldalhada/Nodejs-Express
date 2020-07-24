@@ -152,7 +152,8 @@
       <br><br>
 
       3. 5XX (서버, 나의 문제)
-        + 500: 서버 에러(Interel server error)
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 500: 서버 에러(Interel server error)
 
 
 <br>
@@ -162,9 +163,7 @@
   - Test Driven Development : 테스트가 개발을 이끌어 나간다. 
   - 개발을 할 때 바로 소스코드를 작성하지 않고 테스트 코드를 먼저 작성하는 것
   - 테스트 코드를 먼저 만든 다음에 테스트를 하나하나 통과해 나가면서 코드를 만드는 개발 방법
-
   - TDD를 사용하면 개발 기간이 오래걸리긴 함, 하지만 유지보수 기간이 줄어드는 효과를 가짐 
-
   - mocha, should, superTest
 
   1. mocha
@@ -193,23 +192,23 @@
 
 <br>
 
-    2. should
-      - https://shouldjs.github.io
-      - https://github.com/tj/should.js
+  2. should
+    - https://shouldjs.github.io
+    - https://github.com/tj/should.js
 
-      - "노드 assert 말고 서드파티 라이브러리를 사용하라"
-      - 슈드(should)는 검증 라이브러리이다.
-      - 가독성 높은 테스트 코드를 만들 수 있다. 
+    - "노드 assert 말고 서드파티 라이브러리를 사용하라"
+    - 슈드(should)는 검증 라이브러리이다.
+    - 가독성 높은 테스트 코드를 만들 수 있다. 
 
 <br>
 
-    3. superTest
-      - 단위 테스트: 함수의 기능 테스트 ==> mocha와 should
-      - 통합 테스트: API의 기능 테스트
-      - 슈퍼 테스트는 Express용 통합 테스트 라이브러리이다. 
+  3. superTest
+    - 단위 테스트: 함수의 기능 테스트 ==> mocha와 should
+    - 통합 테스트: API의 기능 테스트
+    - 슈퍼 테스트는 Express용 통합 테스트 라이브러리이다. 
 
-      - 설치: npm install superset
-      - 확인: node_modules/.bin/mocha [파일명]
+    - 설치: npm install superset
+    - 확인: node_modules/.bin/mocha [파일명]
         (express 앱 자체를 export ==> module.exports = app;)
 
 
