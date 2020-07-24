@@ -14,8 +14,9 @@
   "devDependencies": {
     "mocha": "^8.0.1"
   },
+
   "scripts": {
-    "test": "NODE_ENV=test mocha api/user/user.spec.js",
+    "test": "NODE_ENV=test mocha api/user/user.spec.js -w", 
     "start": "nodemon bin/www.js"
   },
   "repository": {

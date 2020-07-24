@@ -25,51 +25,101 @@ const show = function(req, res){
     const id = parseInt(req.params.id, 10);
     if (Number.isNaN(id)) return res.status(400).end();
 
-    const user = users.filter((user) => {      // filter 메소드는 특정 조건에 해당하는 값을 새로운 어레이로 반환
-        return user.id === id
-    })[0];
+    // const user = users.filter((user) => {      // filter 메소드는 특정 조건에 해당하는 값을 새로운 어레이로 반환
+    //     return user.id === id
+    // })[0];
+    
+    models.User.findOne({
+        where: {
+            id: id     // key와 value가 같으면 하나만 써도됨 
+        }
+    }).then(user => {
+        if(!user) return res.status(404).end();
+        res.json(user);
+    })
 
-    if(!user) return res.status(404).end();
-    res.json(user);
+    // if(!user) return res.status(404).end();
+    // res.json(user);
 }
 
 const destroy = (req, res) => {
     const id = parseInt(req.params.id, 10);
     if (Number.isNaN(id)) return res.status(400).end();
 
-    users = users.filter(user => user.id !== id);
-    res.status(204).end();
+    models.User.destroy({
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.status(204).end();
+    })
+
+    // users = users.filter(user => user.id !== id);
+    // res.status(204).end();
 }
 
 const create = (req, res) => {
     const name = req.body.name;
     if (!name) return res.status(400).end();
 
-    const isConfilc = users.filter(user => user.name === name).length
-    if(isConfilc) return res.status(409).end();
+    // const isConfilc = users.filter(user => user.name === name).length
+    // if(isConfilc) return res.status(409).end();
 
-    const id = Date.now();
-    const user = {id, name};
-    users.push(user);
-    res.status(201).json(user);
+    models.User.create({
+        name: name
+    }).then(user => {
+        res.status(201).json(user);
+    })
+    .catch(err => {
+        if(err.name === 'SequelizeUniqueConstraintError') {
+            return res.status(409).end();
+        }
+        res.status(500).end();
+    })
+
+
+    // DB에서 다 만들어주기 때문에 필요 없음
+    // const id = Date.now(); 
+    //const user = {id, name};
+    //users.push(user);
 }
 
 const update = (req,res) => {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id, 10);
     if(Number.isNaN(id)) return res.status(400).end();
 
     const name = req.body.name;
     if(!name) return res.status(400).end();
+
+    models.User.findOne({
+        where: {
+            id: id
+        }
+    }).then(user => {
+        if(!user) return res.status(404).end();
+
+        user.name = name;
+        user.save()
+            .then(_ => {
+                res.json(user);
+            })
+            .catch(err => {
+                if(err.name === 'SequelizeUniqueConstraintError') {
+                    return res.status(409).end();
+                }
+                res.status(500).end();
+            })
+    })
     
-    const isConfilict = users.filter(user => user.name === name).length
-    if(isConfilict) return res.status(409).end();
+    // const isConfilict = users.filter(user => user.name === name).length
+    // if(isConfilict) return res.status(409).end();
 
-    const user = users.filter(user => user.id === id)[0];
-    if(!user) return res.status(404).end();
+    // const user = users.filter(user => user.id === id)[0];
+    // if(!user) return res.status(404).end();
 
-    user.name = name;
+    // user.name = name;
 
-    res.json(user);
+    //res.json(user);
 }
 
 module.exports = {

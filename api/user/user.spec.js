@@ -8,13 +8,14 @@ const models = require('../../models');
 
 //descript이나 it 뒤에 .only를 붙이면 얘만 실행
 describe('GET /users는 ', () => {
-    describe.only('성공시', () => {
-        before(done => {
-            models.sequelize.sync({force: true}).then(_=> done())
-        })
-        before(()=> {
-            return models.User.bulkCreate(users);
-        })
+    const users = [{name: 'alice'}, {name:'bek'}, {name: 'chris'}];
+    before(done => {
+        models.sequelize.sync({force: true}).then(_=> done())   // 테이블 만들기
+    })
+    before(()=> {
+        return models.User.bulkCreate(users);    // 샘플 데이터를 집어넣기 
+    })
+    describe('성공시', () => {
         it('유저 객체를 담은 배열로 응답한다. ', (done) => {   // 우리가 만든 서버는 다 비동기로 동작하기 때문에 비동기에 대한 처리로 done이라는 콜백함수를 넣음
             request(app)
                 .get('/users')
@@ -34,7 +35,7 @@ describe('GET /users는 ', () => {
             })
         });
     })
-    describe('실패시', () => {
+    describe('실패시', () => {       // db에 직접 접속하지 않기 때문에 바로 성공 
         it('limit이 숫자형이 아니면 400을 응답한다.', (done) => {
             request(app)
                 .get('/users?limit=two')
@@ -46,6 +47,13 @@ describe('GET /users는 ', () => {
 
 
 describe('GET /users/1는', () => {
+    const users = [{name: 'alice'}, {name:'bek'}, {name: 'chris'}];
+    before(done => {
+        models.sequelize.sync({force: true}).then(_=> done())   // 테이블 만들기
+    })
+    before(()=> {
+        return models.User.bulkCreate(users);    // 샘플 데이터를 집어넣기 
+    })
     describe('성공시', () => {
         it('id가 1인 유저 객체를 반환한다.', (done) => {
             request(app)
@@ -76,6 +84,13 @@ describe('GET /users/1는', () => {
 
 
 describe('DELETE /users/1', () => {
+    const users = [{name: 'alice'}, {name:'bek'}, {name: 'chris'}];
+    before(done => {
+        models.sequelize.sync({force: true}).then(_=> done())   // 테이블 만들기
+    })
+    before(()=> {
+        return models.User.bulkCreate(users);    // 샘플 데이터를 집어넣기 
+    })
     describe('성공시', () => {
         it('204를 응답한다', (done) => {
             request(app)
@@ -95,7 +110,14 @@ describe('DELETE /users/1', () => {
 });
 
 
-describe('POST /users', () => {                              
+describe('POST /users', () => {     
+    const users = [{name: 'alice'}, {name:'bek'}, {name: 'chris'}];
+    before(done => {
+        models.sequelize.sync({force: true}).then(_=> done())   // 테이블 만들기
+    })
+    before(()=> {
+        return models.User.bulkCreate(users);    // 샘플 데이터를 집어넣기 
+    })                         
     describe('성공시', () => {
         let name =  'daniel',
             body;                       
@@ -135,7 +157,15 @@ describe('POST /users', () => {
 });
 
 
-describe('PUT /users', () => {
+describe.only('PUT /users', () => {
+    const users = [{name: 'alice'}, {name:'bek'}, {name: 'chris'}];
+    before(done => {
+        models.sequelize.sync({force: true}).then(_=> done())   // 테이블 만들기
+    })
+    before(()=> {
+        return models.User.bulkCreate(users);    // 샘플 데이터를 집어넣기 
+    });
+           
     describe('성공시', () => {
         it('변경된 name을 응답한다', (done) => {
             const name = 'chally'
